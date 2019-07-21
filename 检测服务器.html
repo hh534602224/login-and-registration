@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="./jquery.js"></script>
+<script>
+// 调用http的实例对象
+    let fwq=new XMLHttpRequest();
+    // 创建一个准备请求接口
+    fwq.open('get','http://127.0.0.1:8080/getRandomJocke');
+    // 吧准备好的请求发出去
+    fwq.send();
+    // 监听此时通信结果如何
+    fwq.onreadystatechange=function(){
+        // 判断发出的请求是否处理完成
+        if (fwq.readyState===4){
+            // 完成了的话返回200
+            if(fwq.status===200){
+                console.log('ojbk')
+                console.log(fwq.responseText)
+            }else{
+                console.log('反正就是不成功');
+            }
+        }else{
+            console.log('请求都没处理好')
+            
+        }
+
+    }
+
+
+</script>
+</html>
